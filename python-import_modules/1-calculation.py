@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-if __name == "__main__":
+if __name__ == "__main__":
     import calculator_1 as cal
     a = 10
     b = 5

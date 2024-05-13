@@ -7,7 +7,7 @@ def no_c(my_string):
         if char == "C" or char == "c":
             new.pop(index)
         else:
-            index += 1 
+            index += 1
     for item in new:
         new_string += item
     return new_string

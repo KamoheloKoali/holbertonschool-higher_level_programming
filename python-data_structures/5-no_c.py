@@ -3,7 +3,7 @@ def no_c(my_string):
     index = 0
     for char in my_string:
         if char == "C" or char == "c":
-            new_string = " "
+            new_string = ""
             new = list((my_string))
             new.pop(index)
             for item in new:

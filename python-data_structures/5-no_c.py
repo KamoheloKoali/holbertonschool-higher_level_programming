@@ -5,4 +5,4 @@ def no_c(my_string):
         if char == "C" or char == "c":
             new = list((my_string)).pop(index)
         index += 1
-    return my_string
+    return new

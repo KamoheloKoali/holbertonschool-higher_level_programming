@@ -7,4 +7,4 @@ def print_matrix_integer(matrix=[[]]):
                 print()
             else:
                 print(" ", end="")
-    return 0
+    return None

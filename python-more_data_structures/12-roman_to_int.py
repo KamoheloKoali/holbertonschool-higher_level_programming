@@ -22,6 +22,6 @@ def roman_to_int(roman_string):
                     if roman_dict[key] <= roman_dict[prev_key]:
                         result += roman_dict[key]
                     else:
-                        result -= roman_dict[key]
+                        result = roman_dict[key] - result
         prev_key = letter
     return result

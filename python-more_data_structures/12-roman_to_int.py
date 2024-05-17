@@ -17,10 +17,10 @@ def roman_to_int(roman_string):
         return 0
     if "IV" in roman_string:
         result += 4
-        roman_string.remove("IV")
+        roman_string.replace("IV", "")
     if "IX" in roman_string:
         result += 9
-        roman_string.remove("IX")
+        roman_string.replace("IX", "")
     for letter in roman_string:
         if letter in roman_dict:
             for key in roman_list:

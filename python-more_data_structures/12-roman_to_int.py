@@ -11,20 +11,17 @@ def roman_to_int(roman_string):
             "M": 1000
     }
     roman_list = list((roman_dict.keys()))
-    prev_key = ""
+    prev_key = roman_list[0]
 
     if not isinstance(roman_string, str) or not roman_string:
         return 0
     for letter in roman_string:
         if letter in roman_dict:
             for key in roman_list:
-                if roman_list[0] != key:
-                    prev_key = roman_list[roman_list.index(key) - 1]
-                else:
-                    prev_key = key
                 if letter == key:
                     if roman_dict[key] <= roman_dict[prev_key]:
                         result += roman_dict[key]
                     else:
                         result -= roman_dict[key]
+                prev_key = key
     return result

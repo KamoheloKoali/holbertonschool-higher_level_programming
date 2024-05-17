@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or not roman_string:
         return 0
     if "IV" in roman_string:
-        result += 4
+        result = 4
         roman_string.replace("IV", "")
     if "IX" in roman_string:
         result += 9

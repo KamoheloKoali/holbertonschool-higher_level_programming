@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
             "D": 500,
             "M": 1000
     }
-    roman_list = roman_dict.keys()
+    roman_list = list((roman_dict.keys()))
     prev_key = ""
 
     if not isinstance(roman_string, str) or not roman_string:

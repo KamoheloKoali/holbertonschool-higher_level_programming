@@ -4,20 +4,17 @@
 2-square.py: is a class Square that defines a square
 """
 
+
 class Square:
-    """Represent a square.
-
+    """class Square that defines a square
     Attributes:
-        attr1 (_Square_Size): private instance attribute size
-
+        attr1 (_Square__Size): Private instance attribute size
     """
 
     def __init__(self, size=0):
-        """Initializer _square_size"""
-        if size.isdigit():
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size =  size
-        else:
+        """Initializer with default size = 0"""
+        if type(size) is not int:
             raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size

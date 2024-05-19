@@ -4,8 +4,7 @@
 """
 
 class Square:
-    """
-    Represent a square.
+    """Represent a square.
 
     Attributes:
         attr1 (size): Size of the square.

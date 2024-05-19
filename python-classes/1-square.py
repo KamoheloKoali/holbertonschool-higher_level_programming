@@ -4,14 +4,15 @@
 1-square.py: is a class Square that defines a square
 """
 
+
 class Square:
-    """Represent a square.
+    """class Square that defines a square
 
     Attributes:
-        attr1 (size): Size of the square.
+        attr1 (size): Size of the Square.
 
     """
 
-    def __init__(self, size_value=0):
-        """Initializer _square_size"""
-        self.__size = size_value
+    def __init__(self, size=0):
+        """Initializer _Square__size"""
+        self.__size = size

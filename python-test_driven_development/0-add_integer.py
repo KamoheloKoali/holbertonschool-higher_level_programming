@@ -26,13 +26,13 @@ def add_integer(a, b=98):
         The return value. integer value on success
 
     Raises:
-        TypeError: if either a or b are not int or float
+        ValueError: if either a or b are not int or float
     """
 
     if not isinstance(a, (float, int)):
-        raise TypeError("a must be an integer")
+        raise ValueError("a must be an integer")
     if not isinstance(b, (float, int)):
-        raise TypeError("b must be an integer")
+        raise ValueError("b must be an integer")
     if type(a) == float and type(b) == float:
         return int(a) + int(b)
     elif type(a) != float and type(b) == float:

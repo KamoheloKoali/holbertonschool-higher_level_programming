@@ -44,3 +44,4 @@ def add_integer(a, b=98):
     elif type(a) is float and type(b) is not float:
         return int(a) + b
     return a + b
+

@@ -30,17 +30,17 @@ def add_integer(a, b=98):
     """
 
     if not isinstance(a, (float, int)):
-        if a != None:
+        if a is not None:
             raise TypeError("a must be an integer")
         raise ValueError("a must be an integer")
     if not isinstance(b, (float, int)):
-        if b != None:
+        if b is not None:
             raise TypeError("b must be an integer")
         raise ValueError("b must be an integer")
-    if type(a) == float and type(b) == float:
+    if type(a) is float and type(b) is float:
         return int(a) + int(b)
-    elif type(a) != float and type(b) == float:
+    elif type(a) is not float and type(b) is float:
         return a + int(b)
-    elif type (a) == float and type(b) != float:
+    elif type(a) is float and type(b) is not float:
         return int(a) + b
     return a + b

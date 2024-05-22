@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 0-add_integer.py adds two integers and returns the result
 
@@ -31,5 +33,10 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (float, int)):
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
-
+    if type(a) == float and type(b) == float:
+        return int(a) + int(b)
+    elif type(a) != float and type(b) == float:
+        return a + int(b)
+    elif type (a) == float and type(b) != float:
+        return int(a) + b
+    return a + b

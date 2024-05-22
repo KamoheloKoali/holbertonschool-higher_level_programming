@@ -27,7 +27,8 @@ def add_integer(a, b=98):
         The return value. integer value on success
 
     Raises:
-        ValueError: if either a or b are not int or float
+        TypeError: if either a or b are not int or float
+        ValueError: if either a or b is None
     """
 
     if not isinstance(a, (float, int)):

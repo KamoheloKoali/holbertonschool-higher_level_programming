@@ -1,0 +1,27 @@
+test for 3-say_my_name.py
+
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name("Hank")
+My name is Hank 
+
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+TypeError: first_name must be a string
+
+>>> say_my_name("John", 456)
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+TypeError: last_name must be a string
+
+>>> say_my_name(123, 456)
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+TypeError: first_name must be a string

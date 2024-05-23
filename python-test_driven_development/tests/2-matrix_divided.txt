@@ -62,6 +62,6 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 ...     [4, 5, 6]
 ... ]
 
->>> print(matrix_divided([[1, 2, 3], [4, 5, 6]], None))
+>>> print(matrix_divided(matrix, None))
 Traceback (most recent call last):
 TypeError: div must be a number

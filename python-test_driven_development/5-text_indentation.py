@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
+
 """
 5-text_indentation.py prints a text with 2 new lines after each of these characters: ., ? and :
 
@@ -22,7 +24,7 @@ def text_indentation(text):
     Prints a text with 2 new lines after each of these characters: ., ? and :
 
     Args:
-        text (string): first parameter
+        text (str): first parameter
 
     Raises:
         TypeError: if text is not a string
@@ -32,13 +34,17 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     delimiters = ".?:"
+    result = ""
+    i = 0
 
-    for character in text:
-        for delimiter in delimiters:
-            if character is delimiter:
-                print(character, end="")
-                print("\n")
-                break
-        if character in delimiters:
+    while i < len(text):
+        result += text[i]
+        if text[i] in delimiters:
+            result += "\n\n"
+            i += 1
+            while i < len(text) and text[i] == " ":
+                i += 1
             continue
-        print(character, end="")
+        i += 1
+
+    print(result, end="")

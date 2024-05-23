@@ -37,7 +37,7 @@ def text_indentation(text):
         for delimiter in delimiters:
             if character is delimiter:
                 print(character, end="")
-                print("\n" * 2)
+                print("\n")
                 break
         if character in delimiters:
             continue

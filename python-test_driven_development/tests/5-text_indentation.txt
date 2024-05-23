@@ -28,3 +28,7 @@ End with a period.
 Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
 TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string

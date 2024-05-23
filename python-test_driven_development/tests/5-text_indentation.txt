@@ -1,0 +1,37 @@
+test for 5-text_indentation.py
+
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+>>> text_indentation("Hello. How are you? I'm fine.")
+Hello.
+<BLANKLINE>
+<BLANKLINE>
+ How are you?
+<BLANKLINE>
+<BLANKLINE>
+ I'm fine.
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation("This is a test: does it work? Yes, it does.")
+This is a test:
+<BLANKLINE>
+<BLANKLINE>
+ does it work?
+<BLANKLINE>
+<BLANKLINE>
+ Yes, it does.
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation("")
+
+>>> text_indentation("End with a period.")
+End with a period.
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+TypeError: text must be a string

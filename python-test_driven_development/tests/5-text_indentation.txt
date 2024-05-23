@@ -5,17 +5,17 @@ test for 5-text_indentation.py
 >>> text_indentation("Hello. How are you? I'm fine.")
 Hello.
 <BLANKLINE>
- How are you?
+How are you?
 <BLANKLINE>
- I'm fine.
+I'm fine.
 <BLANKLINE>
 
 >>> text_indentation("This is a test: does it work? Yes, it does.")
 This is a test:
 <BLANKLINE>
- does it work?
+does it work?
 <BLANKLINE>
- Yes, it does.
+Yes, it does.
 <BLANKLINE>
 
 >>> text_indentation("")

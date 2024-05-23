@@ -22,13 +22,13 @@ No spaces are printed at the beginning of a line.
 ::
 
     >>> text_indentation("   Hi there.")
-    Hi there.
+       Hi there.
     <BLANKLINE>
 
 ::
 
     >>> text_indentation("          ")
-
+    <BLANKLINE>
 Similarly, no spaces are printed at the end of each printed line.
 
 ::
@@ -40,7 +40,7 @@ Similarly, no spaces are printed at the end of each printed line.
 ::
 
     >>> text_indentation("    Woah now.    This is messy.   ")
-    Woah now.
+        Woah now.
     <BLANKLINE>
     This is messy.
     <BLANKLINE>

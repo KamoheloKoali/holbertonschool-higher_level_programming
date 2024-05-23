@@ -10,7 +10,7 @@ Examples:
     >>> matrix_divided([[10, 20, 30], [40, 50, 60]], 2.5)
     [[4.0, 8.0, 12.0], [16.0, 20.0, 24.0]]
 
-    >>> matrix_divided([[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]], 2)
+4    >>> matrix_divided([[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]], 2)
     [[0.75, 1.25, 1.75], [2.25, 2.75, 3.25]]
 
     >>> matrix_divided([[1.2, 2.4, 3.6], [4.8, 6.0, 7.2]], 1.2)
@@ -44,8 +44,12 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: if div is zero
     """
 
-    if not isinstance(matrix, list) or not matrix:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if (not isinstance(matrix, list) or matrix == [] or
+            not all(isinstance(row, list) for row in matrix) or
+            not all((isinstance(ele, int) or isinstance(ele, float))
+                    for ele in [num for row in matrix for num in row])):
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
     if div is 0:
         raise ZeroDivisionError("division by zero")
     elif not isinstance(div, (int, float)):

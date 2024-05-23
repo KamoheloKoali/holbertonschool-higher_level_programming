@@ -56,8 +56,6 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     new_matrix = []
     for row in matrix:
-        if not isinstance(row, list) or not row:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
         if len(matrix[0]) != len(row):
             raise TypeError("Each row of the matrix must have the same size")
         new_row = []

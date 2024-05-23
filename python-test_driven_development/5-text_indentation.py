@@ -29,22 +29,20 @@ def text_indentation(text):
     Raises:
         TypeError: if text is not a string
     """
-
-    if not isinstance(text, str):
+if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    delimiters = ".?:"
-    result = ""
-    i = 0
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
 
-    while i < len(text):
-        result += text[i]
-        if text[i] in delimiters:
-            result += "\n\n"
-            i += 1
-            while i < len(text) and text[i] == " ":
-                i += 1
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
             continue
-        i += 1
-
-    print(result, end="")
+        c += 1

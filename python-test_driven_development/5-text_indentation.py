@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 
 """
-5-text_indentation.py prints a text with 2 new lines after each of these characters: ., ? and :
+5-text_indentation.py prints a text with 2 new lines after ., ? and :
 
 Examples:
     >>> text_indentation("Hello. How are you? I'm fine.")
@@ -18,6 +17,7 @@ Examples:
 
     Yes, it does.
 """
+
 
 def text_indentation(text):
     """

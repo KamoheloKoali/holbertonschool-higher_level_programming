@@ -4,6 +4,7 @@
 0-rectangle.py defines a rectangle
 """
 
+
 class Rectangle:
     """
     Defines a rectangle

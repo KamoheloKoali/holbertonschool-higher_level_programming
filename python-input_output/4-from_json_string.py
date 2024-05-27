@@ -15,5 +15,6 @@ def from_json_string(my_str):
     Returns:
         an object
     """
-
-    return json.load(my_str)
+    with open("new_text.txt", "w", encoding="utf-8") as file:
+        file.write(my_str)
+        return json.load(file)

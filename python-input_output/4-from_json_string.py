@@ -16,7 +16,7 @@ def from_json_string(my_str):
         an object
     """
 
-    if not my_str.strip():  # Check if the string is empty or contains only whitespace
+    if not my_str.strip():
         return []
 
     with open("new_text.txt", "w", encoding="utf-8") as file:
@@ -24,4 +24,3 @@ def from_json_string(my_str):
 
     with open("new_text.txt", "r", encoding="utf-8") as file:
         return json.load(file)
-

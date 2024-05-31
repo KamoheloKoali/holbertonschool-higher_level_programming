@@ -17,7 +17,7 @@ json_data = None
 try:
     res = requests.get(url)
 except:
-    return None
+    print("failed to retrieve data")
 
 print("Status Code: {}".format(response.status_code))
 

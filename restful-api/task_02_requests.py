@@ -19,10 +19,10 @@ try:
 except:
     print("failed to retrieve data")
 
-print("Status Code: {}".format(response.status_code))
+print("Status Code: {}".format(res.status_code))
 
 if res.headers.get("Content-Type") == "application/json; charset=utf-8":
-    json_data = response.json()
+    json_data = res.json()
 
 
 def fetch_and_print_posts():

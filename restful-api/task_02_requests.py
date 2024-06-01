@@ -43,16 +43,15 @@ def fetch_and_save_posts():
         print("Failed to retrieve data")
         return
 
-    if res.headers.get("Content-Type") == "application/json; charset=utf-8":
-        json_data = res.json()
+    json_data = res.json()
 
-        csvfile = "posts.csv"
+    csvfile = "posts.csv"
 
-        filtered_data = [{key: post[key] for key in ('id', 'title', 'body')} for post in json_data]
+    filtered_data = [{key: post[key] for key in ('id', 'title', 'body')} for post in json_data]
 
-        headers = ['id', 'title', 'body']
+    headers = ['id', 'title', 'body']
 
-        with open(csvfile, "w", newline="") as file:
-            csv_write = csv.DictWriter(file, fieldnames=headers)
-            csv_write.writeheader()
-            csv_write.writerows(filtered_data)
+    with open(csvfile, "w", newline="") as file:
+        csv_write = csv.DictWriter(file, fieldnames=headers)
+        csv_write.writeheader()
+        csv_write.writerows(filtered_data)

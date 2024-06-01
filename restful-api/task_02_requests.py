@@ -48,10 +48,17 @@ def fetch_and_save_posts():
         json_data = res.json()
 
         csvfile = "posts.csv"
+        data = []
 
-        headers = ["id", "title", "body"]
+        for key, value in json_data[0].items():
+            dict_data = {}
+            if key != "UserId":
+                dict_data[key] = value
+            data.append(dict_data)
+
+        headers = dict_data.keys()
 
         with open(csvfile, "w", newline="") as file:
             csv_write = csv.DictWriter(file, fieldnames=headers)
             csv_write.writeheader()
-            csv_write.writerows(json_data)
+            csv_write.writerows(data)

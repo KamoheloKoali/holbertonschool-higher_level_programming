@@ -13,54 +13,46 @@ import csv
 
 def fetch_and_print_posts():
     """
-    Fetches all posts from JSONPlaceholder and prints the titles
+    Fetches all posts from JSONPlaceholder and prints the titles.
     """
     url = "https://jsonplaceholder.typicode.com/posts"
-    res = None
-    json_data = None
 
     try:
         res = requests.get(url)
-    except:
-        print("failed to retrieve data")
+        res.raise_for_status()  # Raise an exception for HTTP errors
+    except requests.RequestException as e:
+        print(f"Failed to retrieve data: {e}")
+        return
 
     print("Status Code: {}".format(res.status_code))
 
     if res.headers.get("Content-Type") == "application/json; charset=utf-8":
         json_data = res.json()
-    
-    for post in json_data:
-        print(post["title"])
-
+        for post in json_data:
+            print(post["title"])
 
 def fetch_and_save_posts():
     """
-    Fetches all post from JSONPlaceholder and saves them in a csv file
+    Fetches all posts from JSONPlaceholder and saves them in a csv file.
     """
     url = "https://jsonplaceholder.typicode.com/posts"
-    res = None
-    json_data = None
 
     try:
         res = requests.get(url)
-    except:
-        print("failed to retrieve data")
+        res.raise_for_status()  # Raise an exception for HTTP errors
+    except requests.RequestException as e:
+        print(f"Failed to retrieve data: {e}")
+        return
 
     if res.headers.get("Content-Type") == "application/json; charset=utf-8":
         json_data = res.json()
 
-    posts = []
-    posts_dict = {}
-    csvfile = "posts.csv"
+        csvfile = "posts.csv"
 
-    for post in json_data:
-        for key, value in post.items():
-            posts_dict[key] = value
-        posts.append(posts_dict)
+        # Extract headers from the first post
+        headers = json_data[0].keys()
 
-    headers = posts[0].keys()
-
-    with open(csvfile, "w", newline="") as file:
-        csv_write = csv.DictWriter(file, fieldnames=headers)
-        csv_write.writeheader()
-        csv_write.writerows(posts)
+        with open(csvfile, "w", newline="") as file:
+            csv_write = csv.DictWriter(file, fieldnames=headers)
+            csv_write.writeheader()
+            csv_write.writerows(json_data)

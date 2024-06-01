@@ -39,9 +39,8 @@ def fetch_and_save_posts():
 
     try:
         res = requests.get(url)
-        res.raise_for_status()
-    except requests.RequestException as e:
-        print(f"Failed to retrieve data: {e}")
+    except:
+        print("Failed to retrieve data")
         return
 
     if res.headers.get("Content-Type") == "application/json; charset=utf-8":

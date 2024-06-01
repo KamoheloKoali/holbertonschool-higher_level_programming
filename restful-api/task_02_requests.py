@@ -10,25 +10,25 @@ Attributes:
 import requests
 import csv
 
-url = "https://jsonplaceholder.typicode.com/posts"
-res = None
-json_data = None
-
-try:
-    res = requests.get(url)
-except:
-    print("failed to retrieve data")
-
-print("Status Code: {}".format(res.status_code))
-
-if res.headers.get("Content-Type") == "application/json; charset=utf-8":
-    json_data = res.json()
-
 
 def fetch_and_print_posts():
     """
     Fetches all posts from JSONPlaceholder and prints the titles
     """
+    url = "https://jsonplaceholder.typicode.com/posts"
+    res = None
+    json_data = None
+
+    try:
+        res = requests.get(url)
+    except:
+        print("failed to retrieve data")
+
+    print("Status Code: {}".format(res.status_code))
+
+    if res.headers.get("Content-Type") == "application/json; charset=utf-8":
+        json_data = res.json()
+    
     for post in json_data:
         print(post["title"])
 
@@ -37,6 +37,18 @@ def fetch_and_save_posts():
     """
     Fetches all post from JSONPlaceholder and saves them in a csv file
     """
+    url = "https://jsonplaceholder.typicode.com/posts"
+    res = None
+    json_data = None
+
+    try:
+        res = requests.get(url)
+    except:
+        print("failed to retrieve data")
+
+    if res.headers.get("Content-Type") == "application/json; charset=utf-8":
+        json_data = res.json()
+
     posts = []
     posts_dict = {}
     csvfile = "posts.csv"

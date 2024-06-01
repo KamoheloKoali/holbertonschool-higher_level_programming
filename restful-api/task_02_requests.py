@@ -39,7 +39,7 @@ def fetch_and_save_posts():
 
     try:
         res = requests.get(url)
-        res.raise_for_status()  # Raise an exception for HTTP errors
+        res.raise_for_status()
     except requests.RequestException as e:
         print(f"Failed to retrieve data: {e}")
         return
@@ -49,8 +49,7 @@ def fetch_and_save_posts():
 
         csvfile = "posts.csv"
 
-        # Extract headers from the first post
-        headers = json_data[0].keys()
+        headers = ["id", "title", "body"]
 
         with open(csvfile, "w", newline="") as file:
             csv_write = csv.DictWriter(file, fieldnames=headers)

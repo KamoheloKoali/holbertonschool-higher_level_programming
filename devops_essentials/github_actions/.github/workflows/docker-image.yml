@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
       - name: build and push docker image
         runs: |
           docker login --username KamoheloKoali --password ${{ secrets.CR_PAT }} ghcr.io
-        docker build . --tag ghcr.io/KamoheloKoali/learning_workflows:latest
-        docker push ghcr.io/KamoheloKoali/learning_workflows:latest
+          docker build . --tag ghcr.io/KamoheloKoali/learning_workflows:latest
+          docker push ghcr.io/KamoheloKoali/learning_workflows:latest

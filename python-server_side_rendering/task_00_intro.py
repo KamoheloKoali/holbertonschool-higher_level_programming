@@ -50,6 +50,6 @@ def generate_invitations(template, attendees):
                 replacement = "N/A"
 
             input = input.replace(expression, replacement)
-        with open("input_" + str(index) + ".txt", "w", encoding="utf-8") as file:
+        with open("output_" + str(index) + ".txt", "w", encoding="utf-8") as file:
             file.write(input)
         index += 1

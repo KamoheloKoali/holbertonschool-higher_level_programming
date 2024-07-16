@@ -1,6 +1,8 @@
 """"
 simple templating program
 """
+import logging
+import sys
 
 def generate_invitations(template, attendees):
     """
@@ -17,16 +19,20 @@ def generate_invitations(template, attendees):
     """
 
     if not isinstance(template, str):
-        raise TypeError(f"Invalid input type: {type(template)} template must be a string")
+        logging.error(f"invalid input type: {type(template)}")
+        sys.exit()
     
     if not isinstance(attendees, list):
-        raise TypeError(f"Invalid input type: {type(attendees)} attendees must be a list of dictionaries")
+        logging.error(f"invalid input type: {type(attendees)}")
+        sys.exit()
     
     if not all(isinstance(elem, dict) for elem in attendees):
-        raise ValueError("No data provided, no output files generated.")
+        logging.error("No data provided, no output files generated.")
+        sys.exit()
 
     if template == "":
-        raise ValueError("Template is empty, no output files generated.")
+        logging.error("Template is empty, no output files generated.")
+        sys.exit()
     
     input = template
     keys = ["name", "event_title", "event_date", "event_location"]

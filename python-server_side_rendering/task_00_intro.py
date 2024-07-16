@@ -34,19 +34,22 @@ def generate_invitations(template, attendees):
         logging.error("Template is empty, no output files generated.")
         sys.exit()
     
-    input = template
     keys = ["name", "event_title", "event_date", "event_location"]
     index = 1
 
     for attendee in attendees:
-        for key in attendee:
-            replacement = attendee[key]
-            expression = "{" + key + "}"
+        input = template
+        for key in keys:
+            try:
+                expression = "{" + key + "}"
+                replacement = attendee[key]
 
-            if key not in keys:
-                replacement = "N/A"
+                if key not in attendee:
+                    replacement = "N/A"
 
-            if replacement in ["", None]:
+                if replacement in ["", None]:
+                    replacement = "N/A"
+            except KeyError:
                 replacement = "N/A"
 
             input = input.replace(expression, replacement)

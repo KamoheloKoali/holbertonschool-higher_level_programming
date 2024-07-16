@@ -1,6 +1,6 @@
-Hello Alice,
+Hello Bob,
 
-You are invited to the Python Conference on 2023-07-15 at New York.
+You are invited to the Data Science Workshop on 2023-08-20 at San Francisco.
 
 We look forward to your presence.
 

@@ -1,6 +1,6 @@
-Hello Alice,
+Hello Charlie,
 
-You are invited to the Python Conference on 2023-07-15 at New York.
+You are invited to the AI Summit on N/A at Boston.
 
 We look forward to your presence.
 

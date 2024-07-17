@@ -6,7 +6,7 @@ import json
 import csv
 
 
-def read_json(filepath):
+def read_json(filepath, id=None):
     """
     read from json file
 
@@ -16,12 +16,19 @@ def read_json(filepath):
     try:
         with open(filepath, "r", encoding="utf-8") as file:
             data = json.load(file)
-        return data
-    except FileNotFoundError:
+
+        if not id:
+            return data
+        
+        for product in data:
+            if product["id"] == id:
+                return product
+            
+    except (FileNotFoundError, KeyError):
         return None
 
 
-def read_csv(filepath):
+def read_csv(filepath, id=None):
     """
     read from csv file
 
@@ -31,8 +38,14 @@ def read_csv(filepath):
     try:
         with open(filepath, "r") as file:
             reader = csv.DictReader(file)
-            data = list(reader)
-        return data
+            data = list(reader) # convert to json
+
+        if not id:
+            return data
+        
+        for product in data:
+            if product["id"] == id:
+                return product
     
-    except FileNotFoundError:
+    except (FileNotFoundError, KeyError):
         return None

@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="eng" dir="ltr">
+<html lang="en" dir="ltr">
     <head>
         <title>Products</title>
     </head>
     <body>
+        {% include 'header.html' %}
+        {% if products %}
         <table border="1">
             <thead>
                 <tr>
@@ -23,5 +25,9 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <p>{{ error }}</p>
+        {% endif %}
+        {% include 'footer.html' %}
     </body>
 </html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="eng" dir="ltr">
+    <head>
+        <title>Products</title>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Category</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    {% for detail in product %}
+                    <td>{{ detail }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

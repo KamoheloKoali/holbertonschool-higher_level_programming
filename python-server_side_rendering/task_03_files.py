@@ -25,7 +25,6 @@ def products():
 
     if source == "json":
         if not product_id:
-            print(read_json('products.json'))
             return render_template('product_display.html', products=read_json('products.json'))
 
         product = read_json('products.json', product_id)
@@ -36,7 +35,6 @@ def products():
     
     elif source == "csv":
         if not product_id:
-            print(read_csv('products.csv'))
             return render_template('product_display.html', products=read_csv('products.csv'))
         
         product = read_csv('products.csv', product_id)

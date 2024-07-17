@@ -29,10 +29,10 @@ def products():
             return render_template('product_display.html', products=read_json('products.json'))
 
         product = read_json('products.json', product_id)
-        if product:
+        if product and not isinstance(product, str):
             return render_template('product_display.html', products=product)
 
-        return render_template('product_display.html', error="Error displaying data")
+        return render_template('product_display.html', error="Product not found")
     
     elif source == "csv":
         if not product_id:
@@ -40,11 +40,10 @@ def products():
             return render_template('product_display.html', products=read_csv('products.csv'))
         
         product = read_csv('products.csv', product_id)
-        if product:
-            print(product)
+        if product and not isinstance(product, str):
             return render_template('product_display.html', products=product)
 
-        return render_template('product_display.html', error="Error displaying data")
+        return render_template('product_display.html', error="Product not found")
     
     else:
         return render_template('product_display.html', error="Wrong source")

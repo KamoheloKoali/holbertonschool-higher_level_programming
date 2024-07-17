@@ -22,7 +22,7 @@ def read_json(filepath, id=None):
         
         for product in data:
             if product["id"] == id:
-                return product
+                return [product]
         
         return "Product not found"
             
@@ -44,10 +44,11 @@ def read_csv(filepath, id=None):
 
         if not id:
             return data
-        
+        print(data)
         for product in data:
-            if product["id"] == id:
-                return product
+            if product["id"] == str(id):
+                return [product]
+        
 
         return "Product not found"
     

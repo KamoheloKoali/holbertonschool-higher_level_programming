@@ -6,7 +6,7 @@
     <body>
         {% include 'header.html' %}
         {% if products %}
-        <table border="1">
+        <table border="1" style="border-collapse: collapse;">
             <thead>
                 <tr>
                     <td>Name</td>
@@ -18,8 +18,10 @@
             <tbody>
                 {% for product in products %}
                 <tr>
-                    {% for detail in product %}
-                    <td>{{ detail }}</td>
+                    {% for key, value in product.items() %}
+                    {% if key != "id" %}
+                    <td>{{ value }}</td>
+                    {% endif %}
                     {% endfor %}
                 </tr>
                 {% endfor %}

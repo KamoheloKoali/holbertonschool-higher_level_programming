@@ -25,26 +25,29 @@ def products():
 
     if source == "json":
         if not product_id:
+            print(read_json('products.json'))
             return render_template('product_display.html', products=read_json('products.json'))
 
         product = read_json('products.json', product_id)
         if product:
             return render_template('product_display.html', products=product)
 
-        return render_template('product_display.html', error="")
+        return render_template('product_display.html', error="Error displaying data")
     
     elif source == "csv":
         if not product_id:
-            return render_template('product_display.html', products=read_csv('products.json'))
+            print(read_csv('products.csv'))
+            return render_template('product_display.html', products=read_csv('products.csv'))
         
         product = read_csv('products.csv', product_id)
         if product:
+            print(product)
             return render_template('product_display.html', products=product)
 
-        return render_template('product_display.html', error="")
+        return render_template('product_display.html', error="Error displaying data")
     
     else:
-        pass
+        return render_template('product_display.html', error="Wrong source")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
